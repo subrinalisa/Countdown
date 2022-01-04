@@ -4,7 +4,7 @@ function countDown() {
     const hourEl = document.querySelector('.hour h2');
     const minuteEl = document.querySelector('.minute h2');
     const secondEl = document.querySelector('.second h2');
-    
+
     // Calculation
     const currentDate = new Date().getTime();
     let targetDate = new Date(currentDate);
@@ -16,7 +16,7 @@ function countDown() {
     const minute = second * 60;
     const hour = minute * 60;
     const day = hour * 24;
-    
+
     // Display
     const displayDay = Math.floor(diff / day);
     const displayHour = Math.floor((diff % day) / hour);

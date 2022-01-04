@@ -6,55 +6,69 @@ Global
 $text-color: #333;
 $blue-color :#001B41;
 $yellow-color: #FFB400;
+
 @mixin fonts($size, $weight, $color) {
     font-size: $size;
     font-weight: $weight;
     color: $color;
 }
+
 @mixin bg-img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
+
 @mixin transition {
     -moz-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 body {
     font-family: 'Montserrat', sans-serif;
     @include fonts(16px, 400, $text-color);
     background: #fff;
 }
+
 ::-webkit-scrollbar {
     width: 12px;
 }
+
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 8px;
 }
+
 ::-webkit-scrollbar-thumb {
     background: gray;
     border-radius: 8px;
 }
+
 h1 {
     font-size: 48px;
 }
+
 h2 {
     font-size: 36px;
 }
+
 h3 {
     font-size: 28px;
 }
+
 h4 {
     font-size: 22px;
 }
+
 h5 {
     font-size: 18px;
 }
+
 h6 {
     font-size: 16px;
 }
+
 h1,
 h2,
 h3,
@@ -65,9 +79,11 @@ p,
 figure {
     margin: 0;
 }
+
 img {
     max-width: 100%;
 }
+
 /*--------------------------------------------------------------------
 Preloader
 ---------------------------------------------------------------------*/
@@ -82,12 +98,14 @@ Preloader
     height: 100%;
     z-index: 9999;
 }
+
 .loader-wrap {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .loader {
     width: 50px;
     height: 50px;
@@ -95,6 +113,7 @@ Preloader
     position: relative;
     animation: rotation 1s infinite;
 }
+
 .loader div {
     background-color: $blue-color;
     width: 15px;
@@ -102,10 +121,12 @@ Preloader
     position: absolute;
     left: 0;
 }
+
 .loader div:nth-child(1) {
     border-top-left-radius: 10px;
     animation: shape1 0.5s ease 0s infinite alternate;
 }
+
 .loader div:nth-child(2) {
     background-color: $yellow-color;
     border-top-right-radius: 10px;
@@ -113,12 +134,14 @@ Preloader
     right: 0;
     animation: shape2 0.5s ease 0s infinite alternate;
 }
+
 .loader div:nth-child(3) {
     background-color: #87030E;
     border-bottom-left-radius: 10px;
     bottom: 0;
     animation: shape3 0.5s ease 0s infinite alternate;
 }
+
 .loader div:nth-child(4) {
     background-color: $text-color;
     border-bottom-right-radius: 10px;
@@ -127,46 +150,57 @@ Preloader
     right: 0;
     animation: shape4 0.5s ease 0s infinite alternate;
 }
+
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
 }
+
 @keyframes shape1 {
     0% {
         transform: translate(0, 0);
     }
+
     100% {
         transform: translate(10px, 10px);
     }
 }
+
 @keyframes shape2 {
     0% {
         transform: translate(0, 0);
     }
+
     100% {
         transform: translate(-10px, 10px);
     }
 }
+
 @keyframes shape3 {
     0% {
         transform: translate(0, 0);
     }
+
     100% {
         transform: translate(10px, -10px);
     }
 }
+
 @keyframes shape4 {
     0% {
         transform: translate(0, 0);
     }
+
     100% {
         transform: translate(-10px, -10px);
     }
 }
+
 /*--------------------------------------------------------------------
 Header
 ---------------------------------------------------------------------*/
@@ -176,15 +210,23 @@ header {
     background-image: url(../images/background/banner.jpg);
     @include bg-img();
     height: 100vh;
+
+    img {
+        animation: 1.5s Infinite linear heartbeat;
+    }
 }
+
 .content {
     margin-top: 30px;
+
     h2 {
         @include fonts(24px, 700, $blue-color);
     }
+
     h3 {
         @include fonts(18px, 600, $text-color);
     }
+
     hr {
         width: 80px;
         margin: 8px auto;
@@ -192,16 +234,49 @@ header {
         height: 2px;
     }
 }
+
 @media (max-width: 767.98px) {
     .content {
         h2 {
             font-size: 16px;
         }
+
         h3 {
             font-size: 13px;
         }
+
         hr {
             width: 50px;
         }
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1.1);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
