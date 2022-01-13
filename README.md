@@ -9,7 +9,7 @@
     <li>Open the index.html file into the vs code</li>
     <li>Open the file into your live server & use the app</li>
 </ul>
-<h2>Live Link: <a href="https://subrinalisa.github.io/countdown-app/" style="font-size: 18px;">Demo</a></h2>
+<h2>Live Link: <a href="https://subrinalisa.github.io/Countdown/" style="font-size: 18px;">Demo</a></h2>
 <h2>How to use the app</h2>
 <ul>
     <li>Download all files, then open the app.js file</li>
